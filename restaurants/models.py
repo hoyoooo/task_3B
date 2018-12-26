@@ -9,5 +9,5 @@ class Restaurant(models.Model):
     closing_time = models.DateTimeField()
 
 
-def __str__(self):
-   return self.name
+    def __str__(self):
+        return self.name
