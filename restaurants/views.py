@@ -1,6 +1,13 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from .models import Restaurant
+from rest_framework.generics import ListAPIView, RetrieveAPIView
+from .serializers import ResturantSerializer
+
+
+class ResturantList(ListAPIView):
+	queryset = Restaurant.objects.all()
+	serializer_class = ResturantSerializer
 
 
 def restaurant_list(request):
